@@ -1,0 +1,37 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "flask-metrics",
+    "title": "Flask App Monitoring",
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "title": "Total Requests",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "flask_http_request_total",
+            "legendFormat": "Total Requests",
+            "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 }
+      },
+      {
+        "title": "Request Duration",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "flask_http_request_duration_seconds_sum / flask_http_request_duration_seconds_count",
+            "legendFormat": "Avg Request Time",
+            "refId": "B"
+          }
+        ],
+        "gridPos": { "x": 6, "y": 0, "w": 6, "h": 4 }
+      }
+    ]
+  }
+}
